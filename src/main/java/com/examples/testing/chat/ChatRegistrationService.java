@@ -13,7 +13,7 @@ public final class ChatRegistrationService {
         this.chatRepository = chatRepository;
     }
 
-    private void registerNewChat(ChatRegistrationRequest request){
+    public void registerNewChat(ChatRegistrationRequest request){
 
         chatRepository.save(request.getChat());
 

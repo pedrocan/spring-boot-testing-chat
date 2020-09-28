@@ -14,7 +14,7 @@ public final class Chat {
     @Id
     private UUID id;
 
-    @NotBlank
+
     @Column(nullable = false)
     private String name;
 
