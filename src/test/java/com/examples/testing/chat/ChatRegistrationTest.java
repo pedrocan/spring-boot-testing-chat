@@ -10,6 +10,7 @@ import org.mockito.MockitoAnnotations;
 import java.util.Optional;
 import java.util.UUID;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
 
@@ -50,6 +51,22 @@ void itShouldSaveNewChat(){
     then(chatRepository).should().save(chatArgumentCaptor.capture());
     Chat chatArgumentValue = chatArgumentCaptor.getValue();
     assertThat(chatArgumentValue).isEqualTo(chat);
+
+}
+@Test
+void itShouldIllegalArgExceptionIdNull() {
+
+    assertThrows(IllegalArgumentException.class, () -> {
+        Chat chat = new Chat(null, "proba");
+    });
+}
+
+@Test
+void itShouldIllegalArgExceptionNameNull(){
+
+    assertThrows(IllegalArgumentException.class, () -> {
+        Chat chat = new Chat(UUID.randomUUID(),null);
+    });
 
 }
 

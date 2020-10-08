@@ -14,16 +14,20 @@ public final class Chat {
     @Id
     private UUID id;
 
-
     @Column(nullable = false)
     private String name;
 
     public Chat(UUID id, String name) {
+
+        if(id == null || id.toString().isBlank() || id.toString().isEmpty()){
+            throw new IllegalArgumentException("Invalid ID");
+        }
+        if(name == null || name.toString().isBlank() || name.toString().isEmpty()){
+            throw new IllegalArgumentException("Invalid name");
+        }
+
         this.id = id;
         this.name = name;
-    }
-
-    public Chat() {
     }
 
     public UUID getId() {
