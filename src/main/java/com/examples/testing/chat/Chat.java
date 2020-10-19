@@ -1,50 +1,42 @@
 package com.examples.testing.chat;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.examples.testing.participante.ListaParticipantesId;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.util.UUID;
 
-@Entity
 @JsonIgnoreProperties(allowGetters = true)
 public final class Chat {
 
-    @Id
     private UUID id;
 
-    @Column(nullable = false)
     private String name;
+
+    private ListaParticipantesId listaParticipantesId;
+
 
     public Chat(UUID id, String name) {
 
         if(id == null || id.toString().isBlank() || id.toString().isEmpty()){
             throw new IllegalArgumentException("Invalid ID");
         }
-        if(name == null || name.toString().isBlank() || name.toString().isEmpty()){
+        if(name == null || name.isBlank() || name.isEmpty()){
             throw new IllegalArgumentException("Invalid name");
         }
 
         this.id = id;
         this.name = name;
+        //this.listaParticipantesId = listaParticipantesId;
     }
 
-    public UUID getId() {
+    public UUID id() {
         return id;
     }
 
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public String getName() {
+    public String name() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     @Override
     public String toString() {

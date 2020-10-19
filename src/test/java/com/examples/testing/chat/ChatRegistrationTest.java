@@ -42,7 +42,7 @@ void itShouldSaveNewChat(){
 
     //given
     //no previous chat with id
-    given(chatRepository.findById(request.getChat().getId())).willReturn(Optional.empty());
+    given(chatRepository.findById(request.getChat().id())).willReturn(Optional.empty());
 
     //when
     underTest.registerNewChat(request);
