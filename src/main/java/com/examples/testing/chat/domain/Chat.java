@@ -1,4 +1,4 @@
-package com.examples.testing.chat;
+package com.examples.testing.chat.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.examples.testing.participante.ListaParticipantesId;

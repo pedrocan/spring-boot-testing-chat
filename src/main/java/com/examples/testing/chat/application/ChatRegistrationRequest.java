@@ -1,5 +1,6 @@
-package com.examples.testing.chat;
+package com.examples.testing.chat.application;
 
+import com.examples.testing.chat.domain.Chat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public final class ChatRegistrationRequest {

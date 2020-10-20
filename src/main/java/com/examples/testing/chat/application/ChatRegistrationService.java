@@ -1,5 +1,6 @@
-package com.examples.testing.chat;
+package com.examples.testing.chat.application;
 
+import com.examples.testing.chat.domain.ChatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

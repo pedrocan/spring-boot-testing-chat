@@ -1,5 +1,9 @@
-package com.examples.testing.chat;
+package com.examples.testing.chat.application;
 
+import com.examples.testing.chat.application.ChatRegistrationRequest;
+import com.examples.testing.chat.application.ChatRegistrationService;
+import com.examples.testing.chat.domain.Chat;
+import com.examples.testing.chat.domain.ChatRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
@@ -53,21 +57,6 @@ void itShouldSaveNewChat(){
     assertThat(chatArgumentValue).isEqualTo(chat);
 
 }
-@Test
-void itShouldIllegalArgExceptionIdNull() {
 
-    assertThrows(IllegalArgumentException.class, () -> {
-        Chat chat = new Chat(null, "proba");
-    });
-}
-
-@Test
-void itShouldIllegalArgExceptionNameNull(){
-
-    assertThrows(IllegalArgumentException.class, () -> {
-        Chat chat = new Chat(UUID.randomUUID(),null);
-    });
-
-}
 
 }
