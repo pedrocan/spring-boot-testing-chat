@@ -1,18 +1,25 @@
 package com.examples.testing.chat.application;
 
 import com.examples.testing.chat.domain.Chat;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.examples.testing.participante.ListaParticipantes;
 
 public final class ChatRegistrationRequest {
 
     private final Chat chat;
 
-    public ChatRegistrationRequest(@JsonProperty("chat") Chat chat) {
+    private final ListaParticipantes listaParticipantes;
+
+    public ChatRegistrationRequest(Chat chat, ListaParticipantes listaParticipantes) {
         this.chat = chat;
+        this.listaParticipantes = listaParticipantes;
     }
 
     public Chat getChat() {
         return chat;
+    }
+
+    public ListaParticipantes getListaParticipantes() {
+        return listaParticipantes;
     }
 
     @Override

@@ -20,7 +20,8 @@ public class ChatUnitTest {
     void itShouldIllegalArgExceptionNameNull(){
 
         assertThrows(IllegalArgumentException.class, () -> {
-            Chat chat = new Chat(UUID.randomUUID(),null);
+            ChatId chatId = new ChatId(UUID.randomUUID().toString());
+            Chat chat = new Chat(chatId,null);
         });
 
     }

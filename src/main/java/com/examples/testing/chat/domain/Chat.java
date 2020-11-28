@@ -1,23 +1,20 @@
 package com.examples.testing.chat.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.examples.testing.participante.ListaParticipantesId;
 
 import java.util.UUID;
 
-@JsonIgnoreProperties(allowGetters = true)
 public final class Chat {
 
-    private UUID id;
+    private ChatId id;
 
     private String name;
 
     private ListaParticipantesId listaParticipantesId;
 
+    public Chat(ChatId id, String name) {
 
-    public Chat(UUID id, String name) {
-
-        if(id == null || id.toString().isBlank() || id.toString().isEmpty()){
+        if(id == null || id.value().isBlank() || id.value().isEmpty()){
             throw new IllegalArgumentException("Invalid ID");
         }
         if(name == null || name.isBlank() || name.isEmpty()){
@@ -29,7 +26,7 @@ public final class Chat {
         //this.listaParticipantesId = listaParticipantesId;
     }
 
-    public UUID id() {
+    public ChatId id() {
         return id;
     }
 
@@ -41,7 +38,7 @@ public final class Chat {
     @Override
     public String toString() {
         return "Chat{" +
-                "id=" + id +
+                "id=" + id.value() +
                 ", name='" + name + '\'' +
                 '}';
     }
