@@ -1,6 +1,11 @@
 package com.examples.testing.chat.domain;
 
-import org.springframework.data.repository.CrudRepository;
+import java.util.Optional;
 
-public interface ChatRepository extends CrudRepository<Chat, ChatId> {
+public interface ChatRepository{
+
+    ChatId save(Chat chat);
+
+    Optional<Chat> findById(ChatId chatId);
+
 }

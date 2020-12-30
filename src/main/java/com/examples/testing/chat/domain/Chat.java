@@ -1,16 +1,9 @@
 package com.examples.testing.chat.domain;
 
-import com.examples.testing.participante.ListaParticipantesId;
-
-import java.util.UUID;
-
 public final class Chat {
 
-    private ChatId id;
-
-    private String name;
-
-    private ListaParticipantesId listaParticipantesId;
+    private final ChatId id;
+    private final String name;
 
     public Chat(ChatId id, String name) {
 
@@ -23,7 +16,6 @@ public final class Chat {
 
         this.id = id;
         this.name = name;
-        //this.listaParticipantesId = listaParticipantesId;
     }
 
     public ChatId id() {

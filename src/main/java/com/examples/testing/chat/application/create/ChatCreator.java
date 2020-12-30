@@ -1,29 +1,28 @@
-package com.examples.testing.chat.application;
+package com.examples.testing.chat.application.create;
 
+import com.examples.testing.chat.application.ChatRegistrationRequest;
 import com.examples.testing.chat.domain.Chat;
+import com.examples.testing.chat.domain.ChatId;
 import com.examples.testing.chat.domain.ChatRepository;
-import com.examples.testing.participante.ListaParticipantes;
-import com.examples.testing.participante.ParticipanteRepository;
-import org.apache.commons.lang3.StringUtils;
+import com.examples.testing.participante.Grupo;
+import com.examples.testing.participante.GrupoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.UUID;
 
 @Service
-public final class ChatRegistrationService {
+public final class ChatCreator{
 
     private final ChatRepository chatRepository;
-
-    private final ParticipanteRepository participanteRepository;
+    private final GrupoRepository grupoRepository;
 
     @Autowired
-    public ChatRegistrationService(ChatRepository chatRepository, ParticipanteRepository participanteRepository) {
+    public ChatCreator(ChatRepository chatRepository, GrupoRepository grupoRepository) {
         this.chatRepository = chatRepository;
-        this.participanteRepository = participanteRepository;
+        this.grupoRepository = grupoRepository;
     }
 
-    public void registerNewChat(ChatRegistrationRequest request){
+    public ChatId createChat(ChatRegistrationRequest request){
 
         //comprobaciones antes de guardar + testear comprobaciones
         //crear chat + tema + obtener id
@@ -33,7 +32,7 @@ public final class ChatRegistrationService {
 
         //lista cubierta en la request
 
-        ListaParticipantes listaParticipantes = request.getListaParticipantes();
+        Grupo grupo = request.getGrupo();
         /*
         ListaParticipantes listaParticipantes = new ListaParticipantes();
 
@@ -49,9 +48,9 @@ public final class ChatRegistrationService {
 
         chatRepository.save(request.getChat());
 
-        participanteRepository.save(listaParticipantes);
+        grupoRepository.save(grupo);
 
-
+        return request.getChat().id();
 
     }
 }

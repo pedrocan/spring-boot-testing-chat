@@ -8,15 +8,12 @@ import java.util.Objects;
 public class Participante {
 
     private UsuarioId usuarioId;
-
     private boolean esAdministrador;
 
-    private ChatId chatId;
 
-    public Participante(UsuarioId usuarioId, boolean esAdministrador, ChatId chatId) {
+    public Participante(UsuarioId usuarioId, boolean esAdministrador) {
         this.usuarioId = usuarioId;
         this.esAdministrador = esAdministrador;
-        this.chatId = chatId;
     }
 
     public void marcarAdmistrador(boolean admin){
@@ -32,12 +29,11 @@ public class Participante {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Participante that = (Participante) o;
-        return  Objects.equals(usuarioId, that.usuarioId) &&
-                Objects.equals(chatId, that.chatId);
+        return  Objects.equals(usuarioId, that.usuarioId) ;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(usuarioId, chatId);
+        return Objects.hash(usuarioId);
     }
 }

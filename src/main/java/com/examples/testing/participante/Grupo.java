@@ -1,17 +1,15 @@
 package com.examples.testing.participante;
 
 import com.examples.testing.chat.domain.ChatId;
-
 import java.util.List;
 
+public class Grupo {
 
-public class ListaParticipantes {
-
+    private final GrupoId grupoId;
     private final ChatId chatId;
-
     private final List<Participante> listaParticipantes;
 
-    public ListaParticipantes(ChatId chatId, List<Participante> listaParticipantes) {
+    public Grupo(GrupoId grupoId, ChatId chatId, List<Participante> listaParticipantes) {
 
         //existe un chat asociado a la lista
         if(chatId == null || chatId.value().isBlank() || chatId.value().isEmpty()){
@@ -33,7 +31,12 @@ public class ListaParticipantes {
 
         this.chatId = chatId;
         this.listaParticipantes = listaParticipantes;
+        this.grupoId = grupoId;
 
+    }
+
+    public GrupoId getGrupoId() {
+        return grupoId;
     }
 
     public void anhadirParticipante(Participante participante) {

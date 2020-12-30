@@ -1,25 +1,25 @@
 package com.examples.testing.chat.application;
 
 import com.examples.testing.chat.domain.Chat;
-import com.examples.testing.participante.ListaParticipantes;
+import com.examples.testing.participante.Grupo;
 
 public final class ChatRegistrationRequest {
 
     private final Chat chat;
 
-    private final ListaParticipantes listaParticipantes;
+    private final Grupo grupo;
 
-    public ChatRegistrationRequest(Chat chat, ListaParticipantes listaParticipantes) {
+    public ChatRegistrationRequest(Chat chat, Grupo grupo) {
         this.chat = chat;
-        this.listaParticipantes = listaParticipantes;
+        this.grupo = grupo;
     }
 
     public Chat getChat() {
         return chat;
     }
 
-    public ListaParticipantes getListaParticipantes() {
-        return listaParticipantes;
+    public Grupo getGrupo() {
+        return grupo;
     }
 
     @Override

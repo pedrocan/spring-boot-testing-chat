@@ -1,7 +1,8 @@
 package com.examples.testing.participante.domain;
 
 import com.examples.testing.chat.domain.ChatId;
-import com.examples.testing.participante.ListaParticipantes;
+import com.examples.testing.participante.Grupo;
+import com.examples.testing.participante.GrupoId;
 import com.examples.testing.participante.Participante;
 import com.examples.testing.usuario.UsuarioId;
 import org.junit.jupiter.api.Test;
@@ -12,16 +13,16 @@ import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ListaParticipantesUnitTest {
+class GrupoUnitTest {
 
     @Test
     void itShouldChatIdNull() {
 
         IllegalArgumentException exception =  assertThrows(IllegalArgumentException.class, () -> {
            // ChatId chatId = new ChatId(UUID.randomUUID().toString());
-
+            GrupoId grupoId = new GrupoId(UUID.randomUUID().toString());
             List<Participante> lista = new ArrayList<>();
-            ListaParticipantes listaParticipantes = new ListaParticipantes(null, lista );
+            Grupo grupo = new Grupo(grupoId,null, lista );
 
         });
 
@@ -32,10 +33,10 @@ class ListaParticipantesUnitTest {
     void itShouldInvalidListaNull() {
 
         IllegalArgumentException exception =  assertThrows(IllegalArgumentException.class, () -> {
-             ChatId chatId = new ChatId(UUID.randomUUID().toString());
 
-            List<Participante> lista = new ArrayList<>();
-            ListaParticipantes listaParticipantes = new ListaParticipantes(chatId, null );
+            ChatId chatId = new ChatId(UUID.randomUUID().toString());
+            GrupoId grupoId = new GrupoId(UUID.randomUUID().toString());
+            Grupo grupo = new Grupo(grupoId,chatId, null );
 
         });
 
@@ -47,14 +48,15 @@ class ListaParticipantesUnitTest {
 
         IllegalArgumentException exception =  assertThrows(IllegalArgumentException.class, () -> {
             ChatId chatId = new ChatId(UUID.randomUUID().toString());
-
+            GrupoId grupoId = new GrupoId(UUID.randomUUID().toString());
             UsuarioId usuarioId= new UsuarioId(UUID.randomUUID().toString());
-            Participante participante = new Participante(usuarioId, Boolean.FALSE, chatId);
+
+            Participante participante = new Participante(usuarioId, Boolean.FALSE);
 
             List<Participante> lista = new ArrayList<>();
             lista.add(participante);
 
-            ListaParticipantes listaParticipantes = new ListaParticipantes(chatId, lista );
+            Grupo grupo = new Grupo(grupoId, chatId, lista );
 
         });
 
@@ -66,17 +68,17 @@ class ListaParticipantesUnitTest {
 
         IllegalArgumentException exception =  assertThrows(IllegalArgumentException.class, () -> {
             ChatId chatId = new ChatId(UUID.randomUUID().toString());
-
+            GrupoId grupoId = new GrupoId(UUID.randomUUID().toString());
             UsuarioId usuarioId= new UsuarioId(UUID.randomUUID().toString());
             UsuarioId usuarioId2= new UsuarioId(UUID.randomUUID().toString());
-            Participante participante = new Participante(usuarioId, Boolean.FALSE, chatId);
-            Participante participante2 = new Participante(usuarioId2, Boolean.FALSE, chatId);
+            Participante participante = new Participante(usuarioId, Boolean.FALSE);
+            Participante participante2 = new Participante(usuarioId2, Boolean.FALSE);
 
             List<Participante> lista = new ArrayList<>();
             lista.add(participante);
             lista.add(participante2);
 
-            ListaParticipantes listaParticipantes = new ListaParticipantes(chatId, lista );
+            Grupo grupo = new Grupo(grupoId, chatId, lista );
 
         });
 
