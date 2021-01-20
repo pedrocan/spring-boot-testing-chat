@@ -1,6 +1,5 @@
-package com.examples.testing.participante;
+package com.examples.testing.grupo.domain;
 
-import com.examples.testing.chat.domain.ChatId;
 import com.examples.testing.usuario.UsuarioId;
 
 import java.util.Objects;

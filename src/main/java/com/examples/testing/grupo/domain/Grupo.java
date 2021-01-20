@@ -1,6 +1,7 @@
-package com.examples.testing.participante;
+package com.examples.testing.grupo.domain;
 
 import com.examples.testing.chat.domain.ChatId;
+
 import java.util.List;
 
 public class Grupo {

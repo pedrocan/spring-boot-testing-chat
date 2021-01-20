@@ -1,4 +1,4 @@
-package com.examples.testing.participante;
+package com.examples.testing.grupo.domain;
 
 public interface GrupoRepository {
 

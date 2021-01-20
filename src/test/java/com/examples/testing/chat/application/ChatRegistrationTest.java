@@ -1,13 +1,14 @@
 package com.examples.testing.chat.application;
 
+import com.examples.testing.chat.application.create.ChatRegistrationRequest;
 import com.examples.testing.chat.domain.Chat;
 import com.examples.testing.chat.domain.ChatId;
 import com.examples.testing.chat.application.create.ChatCreator;
 import com.examples.testing.chat.domain.ChatRepository;
-import com.examples.testing.participante.Grupo;
-import com.examples.testing.participante.GrupoId;
-import com.examples.testing.participante.Participante;
-import com.examples.testing.participante.GrupoRepository;
+import com.examples.testing.grupo.domain.Grupo;
+import com.examples.testing.grupo.domain.GrupoId;
+import com.examples.testing.grupo.domain.Participante;
+import com.examples.testing.grupo.domain.GrupoRepository;
 import com.examples.testing.usuario.UsuarioId;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

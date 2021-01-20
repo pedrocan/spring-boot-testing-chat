@@ -3,14 +3,11 @@ package com.examples.testing.chat.application;
 import com.examples.testing.chat.application.create.ChatCreator;
 
 
+import com.examples.testing.chat.application.create.ChatRegistrationRequest;
 import com.examples.testing.chat.domain.Chat;
 import com.examples.testing.chat.domain.ChatId;
-import com.examples.testing.participante.Grupo;
-import com.examples.testing.participante.GrupoId;
-import com.examples.testing.participante.Participante;
-import com.examples.testing.usuario.UsuarioId;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.examples.testing.grupo.domain.Grupo;
+import com.examples.testing.grupo.domain.GrupoId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 public final class ChatPutController {
@@ -47,7 +43,10 @@ public final class ChatPutController {
             System.out.println("esAdministrador <------> :" + participante.esAdministrador);
         }
 
-        //chatCreator.createChat(new ChatRegistrationRequest(request.getChat(),request.getGrupo()));
+      //  Chat chat = new Chat(new ChatId(request.getId()),request.getName());
+      //  Grupo grupo = new Grupo(new GrupoId(request.getGrupo().getGrupoId()),new ChatId(request.getGrupo().getChatId()), request.getGrupo().getListaParticipantes());
+
+      //  chatCreator.createChat(new ChatRegistrationRequest(chat, grupo);
 
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
@@ -89,6 +88,7 @@ public final class ChatPutController {
             }
 
             static final class Participante{
+
                 private String usuarioId;
                 private boolean esAdministrador;
 

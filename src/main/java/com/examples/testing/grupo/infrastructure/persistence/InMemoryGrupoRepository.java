@@ -1,8 +1,8 @@
-package com.examples.testing.participante.infrastructure.persistence;
+package com.examples.testing.grupo.infrastructure.persistence;
 
-import com.examples.testing.participante.Grupo;
-import com.examples.testing.participante.GrupoId;
-import com.examples.testing.participante.GrupoRepository;
+import com.examples.testing.grupo.domain.Grupo;
+import com.examples.testing.grupo.domain.GrupoId;
+import com.examples.testing.grupo.domain.GrupoRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;

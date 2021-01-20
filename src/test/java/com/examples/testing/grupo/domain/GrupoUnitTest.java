@@ -1,9 +1,6 @@
-package com.examples.testing.participante.domain;
+package com.examples.testing.grupo.domain;
 
 import com.examples.testing.chat.domain.ChatId;
-import com.examples.testing.participante.Grupo;
-import com.examples.testing.participante.GrupoId;
-import com.examples.testing.participante.Participante;
 import com.examples.testing.usuario.UsuarioId;
 import org.junit.jupiter.api.Test;
 

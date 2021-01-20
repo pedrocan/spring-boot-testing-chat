@@ -1,7 +1,7 @@
-package com.examples.testing.chat.application;
+package com.examples.testing.chat.application.create;
 
 import com.examples.testing.chat.domain.Chat;
-import com.examples.testing.participante.Grupo;
+import com.examples.testing.grupo.domain.Grupo;
 
 public final class ChatRegistrationRequest {
 
