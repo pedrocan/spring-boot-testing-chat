@@ -1,6 +1,6 @@
 package com.examples.testing.chat.application;
 
-import com.examples.testing.chat.application.create.ChatRegistrationRequest;
+import com.examples.testing.chat.application.create.ChatRequest;
 import com.examples.testing.chat.domain.Chat;
 import com.examples.testing.chat.domain.ChatId;
 import com.examples.testing.chat.application.create.ChatCreator;
@@ -64,11 +64,11 @@ void itShouldSaveNewChat(){
     Grupo grupo = new Grupo(grupoId, chat.id(), lista);
 
     //a request
-    ChatRegistrationRequest request = new ChatRegistrationRequest(chat, grupo);
+    ChatRequest request = ChatRequest.of(chat, grupo);
 
     //given
     //no previous chat with id
-    given(chatRepository.findById(request.getChat().id())).willReturn(Optional.empty());
+    given(chatRepository.findById(new ChatId(request.getId()))).willReturn(Optional.empty());
 
     //when
     underTest.createChat(request);

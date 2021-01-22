@@ -23,6 +23,10 @@ public class Participante {
         return esAdministrador;
     }
 
+    public UsuarioId getUsuarioId() {
+        return usuarioId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

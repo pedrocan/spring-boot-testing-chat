@@ -1,5 +1,7 @@
 package com.examples.testing.chat.domain;
 
+import java.util.Objects;
+
 public final class Chat {
 
     private final ChatId id;
@@ -33,5 +35,19 @@ public final class Chat {
                 "id=" + id.value() +
                 ", name='" + name + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Chat chat = (Chat) o;
+        return id.value().equals(chat.id.value()) &&
+                name.equals(chat.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id.value(), name);
     }
 }

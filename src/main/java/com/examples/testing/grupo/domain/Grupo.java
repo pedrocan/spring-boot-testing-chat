@@ -40,6 +40,10 @@ public class Grupo {
         return grupoId;
     }
 
+    public List<Participante> getListaParticipantes() {
+        return listaParticipantes;
+    }
+
     public void anhadirParticipante(Participante participante) {
         if(listaParticipantes != null) {
             listaParticipantes.add(participante);

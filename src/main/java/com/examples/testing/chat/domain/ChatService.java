@@ -1,9 +1,9 @@
 package com.examples.testing.chat.domain;
 
-import com.examples.testing.chat.application.create.ChatRegistrationRequest;
+import com.examples.testing.chat.application.create.ChatRequest;
 
 public interface ChatService {
 
-    ChatId createChat(ChatRegistrationRequest chat);
+    ChatId createChat(ChatRequest chat);
 
 }
