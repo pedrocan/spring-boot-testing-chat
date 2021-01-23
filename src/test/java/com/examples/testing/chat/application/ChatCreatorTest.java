@@ -1,6 +1,6 @@
 package com.examples.testing.chat.application;
 
-import com.examples.testing.chat.application.create.ChatRequest;
+import com.examples.testing.chat.application.create.request.ChatDTO;
 import com.examples.testing.chat.domain.Chat;
 import com.examples.testing.chat.domain.ChatId;
 import com.examples.testing.chat.application.create.ChatCreator;
@@ -27,7 +27,7 @@ import static org.mockito.BDDMockito.then;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public final class ChatRegistrationTest {
+public final class ChatCreatorTest {
 
 @Mock
 ChatRepository chatRepository;
@@ -48,6 +48,10 @@ void setUp() {
 
 @Test
 void itShouldSaveNewChat(){
+
+    //Refactor DTO -> Creator
+    //Eliminar entidades -> creator para testear desde aplicacion
+
     ChatId chatId = new ChatId(UUID.randomUUID().toString());
     GrupoId grupoId = new GrupoId(UUID.randomUUID().toString());
     Chat chat = new Chat(chatId, "NEW CHAT");
@@ -64,7 +68,7 @@ void itShouldSaveNewChat(){
     Grupo grupo = new Grupo(grupoId, chat.id(), lista);
 
     //a request
-    ChatRequest request = ChatRequest.of(chat, grupo);
+    ChatDTO request = ChatDTO.of(chat, grupo);
 
     //given
     //no previous chat with id
