@@ -1,9 +1,21 @@
 package com.examples.testing.shared;
 
+import com.examples.testing.chat.domain.ChatId;
+import com.examples.testing.grupo.domain.GrupoId;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.UUID;
 
+@JsonTypeInfo(
+        use = JsonTypeInfo.Id.NAME,
+        property = "type")
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = ChatId.class, name = "chatId"),
+        @JsonSubTypes.Type(value = GrupoId.class, name = "grupoId")
+})
 public abstract class Identifier implements Serializable {
     final protected String value;
 

@@ -6,6 +6,7 @@ import com.examples.testing.chat.domain.ChatRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -25,4 +26,11 @@ public final class InMemoryChatRepository implements ChatRepository {
     public Optional<Chat> findById(ChatId chatId) {
        return  Optional.ofNullable(chats.get(chatId));
     }
+
+    @Override
+    public Map<ChatId,Chat> find() {
+        return chats;
+    }
+
+
 }

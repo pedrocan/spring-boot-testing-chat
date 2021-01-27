@@ -1,5 +1,7 @@
 package com.examples.testing.chat.domain;
 
+
+import java.util.Map;
 import java.util.Optional;
 
 public interface ChatRepository{
@@ -8,4 +10,5 @@ public interface ChatRepository{
 
     Optional<Chat> findById(ChatId chatId);
 
+    Map<ChatId,Chat> find();
 }

@@ -1,4 +1,4 @@
-package com.examples.testing.chat.application;
+package com.examples.testing.chat.application.create;
 
 import com.examples.testing.chat.application.create.ChatCreator;
 import com.examples.testing.chat.application.create.request.ChatDTO;

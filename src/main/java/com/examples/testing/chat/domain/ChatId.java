@@ -7,4 +7,5 @@ public class ChatId extends Identifier {
     public ChatId(String value){
         super(value);
     }
+
 }
