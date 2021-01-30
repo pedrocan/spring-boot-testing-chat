@@ -8,18 +8,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class GrupoUnitTest {
 
     @Test
     void itShouldChatIdNull() {
 
-        IllegalArgumentException exception =  assertThrows(IllegalArgumentException.class, () -> {
-           // ChatId chatId = new ChatId(UUID.randomUUID().toString());
-            GrupoId grupoId = new GrupoId(UUID.randomUUID().toString());
-            List<Participante> lista = new ArrayList<>();
-            Grupo grupo = new Grupo(grupoId,null, lista );
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+            // ChatId chatId = new ChatId(UUID.randomUUID().toString());
+            GrupoId            grupoId = new GrupoId(UUID.randomUUID().toString());
+            List<Participante> lista   = new ArrayList<>();
+            Grupo              grupo   = new Grupo(grupoId, null, lista);
 
         });
 
@@ -29,11 +30,11 @@ class GrupoUnitTest {
     @Test
     void itShouldInvalidListaNull() {
 
-        IllegalArgumentException exception =  assertThrows(IllegalArgumentException.class, () -> {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
 
-            ChatId chatId = new ChatId(UUID.randomUUID().toString());
+            ChatId  chatId  = new ChatId(UUID.randomUUID().toString());
             GrupoId grupoId = new GrupoId(UUID.randomUUID().toString());
-            Grupo grupo = new Grupo(grupoId,chatId, null );
+            Grupo   grupo   = new Grupo(grupoId, chatId, null);
 
         });
 
@@ -43,17 +44,17 @@ class GrupoUnitTest {
     @Test
     void itShouldInvalidSize() {
 
-        IllegalArgumentException exception =  assertThrows(IllegalArgumentException.class, () -> {
-            ChatId chatId = new ChatId(UUID.randomUUID().toString());
-            GrupoId grupoId = new GrupoId(UUID.randomUUID().toString());
-            UsuarioId usuarioId= new UsuarioId(UUID.randomUUID().toString());
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+            ChatId    chatId    = new ChatId(UUID.randomUUID().toString());
+            GrupoId   grupoId   = new GrupoId(UUID.randomUUID().toString());
+            UsuarioId usuarioId = new UsuarioId(UUID.randomUUID().toString());
 
             Participante participante = new Participante(usuarioId, Boolean.FALSE);
 
             List<Participante> lista = new ArrayList<>();
             lista.add(participante);
 
-            Grupo grupo = new Grupo(grupoId, chatId, lista );
+            Grupo grupo = new Grupo(grupoId, chatId, lista);
 
         });
 
@@ -63,19 +64,19 @@ class GrupoUnitTest {
     @Test
     void itShouldWithoutAdmin() {
 
-        IllegalArgumentException exception =  assertThrows(IllegalArgumentException.class, () -> {
-            ChatId chatId = new ChatId(UUID.randomUUID().toString());
-            GrupoId grupoId = new GrupoId(UUID.randomUUID().toString());
-            UsuarioId usuarioId= new UsuarioId(UUID.randomUUID().toString());
-            UsuarioId usuarioId2= new UsuarioId(UUID.randomUUID().toString());
-            Participante participante = new Participante(usuarioId, Boolean.FALSE);
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+            ChatId       chatId        = new ChatId(UUID.randomUUID().toString());
+            GrupoId      grupoId       = new GrupoId(UUID.randomUUID().toString());
+            UsuarioId    usuarioId     = new UsuarioId(UUID.randomUUID().toString());
+            UsuarioId    usuarioId2    = new UsuarioId(UUID.randomUUID().toString());
+            Participante participante  = new Participante(usuarioId, Boolean.FALSE);
             Participante participante2 = new Participante(usuarioId2, Boolean.FALSE);
 
             List<Participante> lista = new ArrayList<>();
             lista.add(participante);
             lista.add(participante2);
 
-            Grupo grupo = new Grupo(grupoId, chatId, lista );
+            Grupo grupo = new Grupo(grupoId, chatId, lista);
 
         });
 

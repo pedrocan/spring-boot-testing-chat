@@ -1,8 +1,6 @@
 package com.examples.testing.chat.application.create;
 
-import com.examples.testing.chat.application.create.ChatCreator;
 import com.examples.testing.chat.application.create.request.ChatDTO;
-import com.examples.testing.chat.domain.ChatId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,16 +15,15 @@ public final class ChatPutController {
     private final ChatCreator chatCreator;
 
     @Autowired
-    public ChatPutController(ChatCreator chatCreator){
+    public ChatPutController(ChatCreator chatCreator) {
         this.chatCreator = chatCreator;
     }
 
     @PutMapping(value = "/chats")
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<String> createChat(@RequestBody ChatDTO request) {
-        return new ResponseEntity<>(chatCreator.createChat(request).value(),HttpStatus.CREATED);
+        return new ResponseEntity<>(chatCreator.createChat(request).value(), HttpStatus.CREATED);
     }
-
 
 
 }

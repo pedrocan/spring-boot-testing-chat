@@ -17,11 +17,11 @@ public class ChatUnitTest {
     }
 
     @Test
-    void itShouldIllegalArgExceptionNameNull(){
+    void itShouldIllegalArgExceptionNameNull() {
 
         assertThrows(IllegalArgumentException.class, () -> {
             ChatId chatId = new ChatId(UUID.randomUUID().toString());
-            Chat chat = new Chat(chatId,null);
+            Chat   chat   = new Chat(chatId, null);
         });
 
     }

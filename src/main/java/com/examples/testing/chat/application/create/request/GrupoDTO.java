@@ -5,11 +5,12 @@ import java.util.List;
 
 public class GrupoDTO {
 
-    String grupoId;
-    String chatId;
+    String                grupoId;
+    String                chatId;
     List<ParticipanteDTO> listaParticipantes = new ArrayList<>();
 
-    public GrupoDTO(){}
+    public GrupoDTO() {
+    }
 
     public String getGrupoId() {
         return grupoId;

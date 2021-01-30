@@ -9,14 +9,14 @@ public final class Chat {
 
     public Chat(ChatId id, String name) {
 
-        if(id == null || id.value().isBlank() || id.value().isEmpty()){
+        if (id == null || id.value().isBlank() || id.value().isEmpty()) {
             throw new IllegalArgumentException("Invalid ID");
         }
-        if(name == null || name.isBlank() || name.isEmpty()){
+        if (name == null || name.isBlank() || name.isEmpty()) {
             throw new IllegalArgumentException("Invalid name");
         }
 
-        this.id = id;
+        this.id   = id;
         this.name = name;
     }
 

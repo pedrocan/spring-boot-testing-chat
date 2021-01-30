@@ -11,18 +11,18 @@ import org.springframework.stereotype.Service;
 
 
 @Service
-public final class ChatCreator{
+public final class ChatCreator {
 
-    private final ChatRepository chatRepository;
+    private final ChatRepository  chatRepository;
     private final GrupoRepository grupoRepository;
 
     @Autowired
     public ChatCreator(ChatRepository chatRepository, GrupoRepository grupoRepository) {
-        this.chatRepository = chatRepository;
+        this.chatRepository  = chatRepository;
         this.grupoRepository = grupoRepository;
     }
 
-    public ChatId createChat(ChatDTO request){
+    public ChatId createChat(ChatDTO request) {
 
         //comprobaciones antes de guardar + testear comprobaciones
         //crear chat + tema + obtener id
@@ -34,7 +34,7 @@ public final class ChatCreator{
         //ChatId chatId = new ChatId(request.getId());
         //Chat chat = new Chat(chatId, request.getName());
         //Grupo grupo = request.getGrupo();
-        Chat chat = request.toChatDomain();
+        Chat  chat  = request.toChatDomain();
         Grupo grupo = request.toGrupoDomain();
 
         chatRepository.save(chat);

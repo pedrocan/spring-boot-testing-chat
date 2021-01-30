@@ -17,11 +17,11 @@ public final class Mensaje {
 
     private final ChatId chatId;
 
-    public Mensaje(MensajeId id, ChatId chatId, String texto, Date fechaCreacion, UsuarioId usuarioCreacion ) {
-        this.id = id;
-        this.texto = texto;
-        this.fechaCreacion = fechaCreacion;
+    public Mensaje(MensajeId id, ChatId chatId, String texto, Date fechaCreacion, UsuarioId usuarioCreacion) {
+        this.id              = id;
+        this.texto           = texto;
+        this.fechaCreacion   = fechaCreacion;
         this.usuarioCreacion = usuarioCreacion;
-        this.chatId = chatId;
+        this.chatId          = chatId;
     }
 }

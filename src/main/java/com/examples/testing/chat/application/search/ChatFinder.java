@@ -19,7 +19,7 @@ public final class ChatFinder {
         this.chatRepository = chatRepository;
     }
 
-    public List<ChatDTO> find(){
+    public List<ChatDTO> find() {
 
         return chatRepository.find()
                 .values()
@@ -29,7 +29,7 @@ public final class ChatFinder {
 
     }
 
-    public ChatDTO findById(ChatId chatId){
+    public ChatDTO findById(ChatId chatId) {
 
         Optional<Chat> chat = chatRepository.findById(chatId);
 

@@ -12,11 +12,11 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 @ControllerAdvice
 public final class RestExceptionHandler extends ResponseEntityExceptionHandler {
 
-        @ExceptionHandler({ ChatNotFoundException.class })
-        protected ResponseEntity<Object> handleNotFound(
-                Exception ex, WebRequest request) {
-            return handleExceptionInternal(ex, "Chat not found",
-                    new HttpHeaders(), HttpStatus.NOT_FOUND, request);
-        }
+    @ExceptionHandler({ChatNotFoundException.class})
+    protected ResponseEntity<Object> handleNotFound(
+            Exception ex, WebRequest request) {
+        return handleExceptionInternal(ex, "Chat not found",
+                new HttpHeaders(), HttpStatus.NOT_FOUND, request);
+    }
 
 }

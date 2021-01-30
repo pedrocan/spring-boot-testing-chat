@@ -7,15 +7,15 @@ import java.util.Objects;
 public class Participante {
 
     private UsuarioId usuarioId;
-    private boolean esAdministrador;
+    private boolean   esAdministrador;
 
 
     public Participante(UsuarioId usuarioId, boolean esAdministrador) {
-        this.usuarioId = usuarioId;
+        this.usuarioId       = usuarioId;
         this.esAdministrador = esAdministrador;
     }
 
-    public void marcarAdmistrador(boolean admin){
+    public void marcarAdmistrador(boolean admin) {
         esAdministrador = admin;
     }
 
@@ -32,7 +32,7 @@ public class Participante {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Participante that = (Participante) o;
-        return  Objects.equals(usuarioId, that.usuarioId) ;
+        return Objects.equals(usuarioId, that.usuarioId);
     }
 
     @Override
