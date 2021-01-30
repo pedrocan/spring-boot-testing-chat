@@ -68,7 +68,7 @@ void itShouldSaveNewChat(){
     Grupo grupo = new Grupo(grupoId, chat.id(), lista);
 
     //a request
-    ChatDTO request = ChatDTO.of(chat, grupo);
+    ChatDTO request = ChatDTO.toDTO(chat, grupo);
 
     //given
     //no previous chat with id

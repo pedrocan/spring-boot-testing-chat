@@ -42,12 +42,12 @@ public class ChatDTO {
             this.grupo = grupo;
         }
 
-       public Chat fromChatDTO(){
+       public Chat toChatDomain(){
             ChatId chatId = new ChatId(this.id);
             return new Chat(chatId, getName());
         }
 
-       public Grupo fromGrupoDTO(){
+       public Grupo toGrupoDomain(){
 
             GrupoId grupoId = new GrupoId(getGrupo().getGrupoId());
             List<Participante> lista = new ArrayList<>();
@@ -60,7 +60,7 @@ public class ChatDTO {
         }
 
 
-      public static ChatDTO of(Chat chat , Grupo grupo){
+      public static ChatDTO toDTO(Chat chat , Grupo grupo){
 
          List<ParticipanteDTO> lista = new ArrayList<>();
          for(Participante participante: grupo.getListaParticipantes()){
@@ -80,6 +80,16 @@ public class ChatDTO {
           return request;
 
         }
+
+    public static ChatDTO toDTO(Chat chat){
+
+        ChatDTO request = new ChatDTO();
+        request.setId(chat.id().value());
+        request.setName(chat.name());
+
+        return request;
+
+    }
 
     }
 
