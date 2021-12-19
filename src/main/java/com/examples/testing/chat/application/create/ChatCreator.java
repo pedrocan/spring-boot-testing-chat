@@ -34,13 +34,19 @@ public final class ChatCreator {
         //ChatId chatId = new ChatId(request.getId());
         //Chat chat = new Chat(chatId, request.getName());
         //Grupo grupo = request.getGrupo();
-        Chat  chat  = request.toChatDomain();
-        Grupo grupo = request.toGrupoDomain();
+        if(chatRepository.findById(new ChatId(request.getId())).isEmpty()){
 
-        chatRepository.save(chat);
-        grupoRepository.save(grupo);
+            Chat  chat  = request.toChatDomain();
+            Grupo grupo = request.toGrupoDomain();
 
-        return chat.id();
+            chatRepository.save(chat);
+            grupoRepository.save(grupo);
+
+            return chat.id();
+        }
+
+        return null;
+
 
     }
 
