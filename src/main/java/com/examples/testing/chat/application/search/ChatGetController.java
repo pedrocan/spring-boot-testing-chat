@@ -19,7 +19,7 @@ public final class ChatGetController {
 
     @GetMapping("/chats")
     public List<ChatDTO> getAll() {
-        return chatFinder.find();
+        return chatFinder.findAll();
     }
 
     @GetMapping("/chats/{id}")

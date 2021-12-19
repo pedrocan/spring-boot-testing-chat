@@ -27,7 +27,7 @@ public final class InMemoryChatRepository implements ChatRepository {
     }
 
     @Override
-    public Map<ChatId, Chat> find() {
+    public Map<ChatId, Chat> findAll() {
         return chats;
     }
 

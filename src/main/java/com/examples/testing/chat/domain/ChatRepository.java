@@ -10,5 +10,5 @@ public interface ChatRepository {
 
     Optional<Chat> findById(ChatId chatId);
 
-    Map<ChatId, Chat> find();
+    Map<ChatId, Chat> findAll();
 }

@@ -19,9 +19,9 @@ public final class ChatFinder {
         this.chatRepository = chatRepository;
     }
 
-    public List<ChatDTO> find() {
+    public List<ChatDTO> findAll() {
 
-        return chatRepository.find()
+        return chatRepository.findAll()
                 .values()
                 .stream()
                 .map(ChatDTO::toDTO)
